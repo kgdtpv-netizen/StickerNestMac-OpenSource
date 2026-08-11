@@ -16957,7 +16957,10 @@ enum NestEngine {
             let tallCount = row.filter { $0.shapeScore > 0.5 }.count
             let wideCount = row.filter { $0.shapeScore < -0.5 }.count
             let blockCount = row.count - tallCount - wideCount
-            let sameShapePenalty = Double(max(tallCount - 2, 0) * 90 + max(wideCount - 2, 0) * 70 + max(blockCount - 3, 0) * 35)
+            let tallPenalty = Double(max(tallCount - 2, 0)) * 90.0
+            let widePenalty = Double(max(wideCount - 2, 0)) * 70.0
+            let blockPenalty = Double(max(blockCount - 3, 0)) * 35.0
+            let sameShapePenalty = tallPenalty + widePenalty + blockPenalty
             let overflow = max(0.0, width - targetRowWidth * 1.04)
             totalScore += abs(width - targetRowWidth) * 8.0
                 + overflow * overflow * 0.75
