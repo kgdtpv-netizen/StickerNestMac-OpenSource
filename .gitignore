@@ -1,0 +1,37 @@
+# Build artifacts
+.build/
+build/
+DerivedData/
+
+# Local Python environments and caches
+.venv/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Private or generated production data
+Resources/manual_profile*.json
+Resources/manual_targets*.json
+Resources/manual_layout_policy.json
+Resources/manual_stagger_policy.json
+log.txt
+*.tif
+*.tiff
+*.plt
+*.psd
+*.preview.png
+*.real.png
+
+# macOS and editors
+.DS_Store
+**/.DS_Store
+*.fuse_hidden*
+*~
+*.swp
